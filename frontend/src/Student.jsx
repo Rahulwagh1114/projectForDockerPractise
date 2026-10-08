@@ -14,7 +14,7 @@ function Student(){
     useEffect(()=>{
        async function fetchData() {
           try{
-            const response=await fetch(`${Api}/`);
+            const response=await fetch(`${Api}/api/students/`);
             if(!response.ok) throw new Error(`HTTP error:${response.status}`)
             const data=await response.json();
             setAllStudent(data)
@@ -28,7 +28,7 @@ function Student(){
 
    async function delStudent(id) {
   try {
-    const response = await fetch(`${Api}/delStudent/${id}`, { method: "DELETE" });
+    const response = await fetch(`${Api}/api/students/delStudent/${id}`, { method: "DELETE" });
     if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
     setAllStudent(allStudent.filter((s) => s._id !== id));
   } catch (err) {
@@ -38,7 +38,7 @@ function Student(){
 
     async function addStudent() {
         try{
-         const response= await fetch(`${Api}/addStudent`,{
+         const response= await fetch(`${Api}/api/students/addStudent`,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(input)

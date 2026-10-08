@@ -13,7 +13,7 @@ const app=express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://project-for-docker-practise-jye209o7t-rahul-wagh-s-projects.vercel.app/"
+        "https://project-for-docker-practise-jye209o7t-rahul-wagh-s-projects.vercel.app"
     ],
     credentials: true
 }));
@@ -28,10 +28,11 @@ const mongoDb=async()=>{
    }
 }
 
+await  mongoDb();
+
 app.use("/api/students",studentRoutes);
 
-app.listen(port,"0.0.0.0",()=>{
+app.listen(port,()=>{
     console.log("Server running on port 8080")
-    mongoDb();
 })
 
