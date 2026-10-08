@@ -13,7 +13,7 @@ const app=express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://project-for-docker-practise-jye209o7t-rahul-wagh-s-projects.vercel.app"
+        "https://project-for-docker-practise.vercel.app"
     ],
     credentials: true
 }));
