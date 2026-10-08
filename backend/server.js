@@ -10,7 +10,13 @@ import cors from "cors";
 const port=8080;
 const app=express();
 
-app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://project-for-docker-practise.vercel.app"
+    ],
+    credentials: true
+}));
 app.use(express.json())
 
 const mongoDb=async()=>{
