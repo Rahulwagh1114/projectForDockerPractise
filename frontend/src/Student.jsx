@@ -36,7 +36,8 @@ function Student(){
   }
 }
 
-    async function addStudent() {
+    async function addStudent( e){
+         e.preventDefault();
         try{
          const response= await fetch(`${Api}/api/students/addStudent`,{
             method:"POST",
